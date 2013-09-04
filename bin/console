@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require
+
+require 'pry'
+# require 'pry-debugger'
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib','wienerlinien'))
+require 'dotenv'
+Dotenv.load
+sender = ENV['sender']
+
+include Wienerlinien
+
+@client = Client.new(sender)
+Pry::CLI.parse_options
