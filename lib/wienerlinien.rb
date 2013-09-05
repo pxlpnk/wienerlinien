@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'wienerlinien/version'
 require_relative 'wienerlinien/errors'
 require_relative 'wienerlinien/monitors'
 require_relative 'wienerlinien/news_list'
