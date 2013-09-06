@@ -39,6 +39,7 @@ GEM
       debugger (~> 1.3)
       pry (~> 0.9.10)
     rainbow (1.1.4)
+    rake (10.1.0)
     recursive-open-struct (0.4.4)
     reek (1.3.3)
       ruby2ruby (~> 2.0.2)
@@ -73,6 +74,7 @@ DEPENDENCIES
   dotenv
   pry
   pry-debugger
+  rake
   reek
   rspec
   rubocop
