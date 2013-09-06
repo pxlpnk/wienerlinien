@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gemspec
+
 group :development do
   gem 'pry'
   gem 'pry-debugger'
@@ -12,4 +14,7 @@ group :test, :development do
 end
 
 
-gemspec
+group :test do
+  gem 'rspec'
+  gem 'vcr'
+end
