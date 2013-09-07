@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.wienerlinien.at/ogd_realtime/monitor?sender=sender_id&rbl=123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Sat, 07 Sep 2013 11:55:15 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - 'Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0'
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json;charset=UTF-8
+      set-cookie:
+      - NSC_MCwtsw-Q-Fyu-SAw=ffffffffc3a0377645525d5f4f58455e445a4a423660;expires=Sat,
+        07-Sep-2013 11:57:15 GMT;path=/;httponly
+    body:
+      encoding: UTF-8
+      string: '{"message":{"value":"Sender existiert nicht","messageCode":317}}'
+    http_version: 
+  recorded_at: Sat, 07 Sep 2013 11:55:15 GMT
+recorded_with: VCR 2.5.0
