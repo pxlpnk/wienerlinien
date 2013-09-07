@@ -1,4 +1,5 @@
 module Wienerlinien
+  # TrafficInfo
   class TrafficInfo
     def initialize(connection)
       @connection = connection
@@ -6,10 +7,12 @@ module Wienerlinien
 
     def get(params)
       response = perform_get(params)
-      RecursiveOpenStruct.new(response.body['data'], :recurse_over_arrays => true)
+      RecursiveOpenStruct.new(
+        response.body['data'],
+        recurse_over_arrays: true)
     end
 
-    def perform_get(params={})
+    def perform_get(params = {})
       if params[:name]
         response = @connection.get do |req|
           req.params = params
@@ -17,11 +20,12 @@ module Wienerlinien
           req.headers['Content-Type'] = 'application/json'
         end
       else
-        raise ParamNotGivenError.new("Please provide one or multiple name=")
+        raise ParamNotGivenError.new('Please provide one or multiple name=')
       end
 
       unless response.success?
-        errors = JSON.parse(response.body)
+        # XXX: proper error handling
+        puts JSON.parse(response.body)
       end
       p response.body
       response

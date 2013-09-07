@@ -1,7 +1,7 @@
 require 'recursive-open-struct'
 module Wienerlinien
+  # Monitoris
   class Monitors
-
     def initialize(connection)
       @connection = connection
     end
@@ -10,13 +10,15 @@ module Wienerlinien
       if params[:rbl]
         response = perform_get(params)
       else
-        raise ParamNotGivenError.new("Please provide a RBL number.")
+        raise ParamNotGivenError.new('Please provide a RBL number.')
       end
 
-      RecursiveOpenStruct.new(response.body['data'], :recurse_over_arrays => true)
+      RecursiveOpenStruct.new(
+        response.body['data'],
+        recurse_over_arrays: true)
     end
 
-    def perform_get(params={})
+    def perform_get(params = {})
       response = @connection.get do |req|
         req.params = params
         req.url '/ogd_realtime/monitor'
@@ -24,7 +26,8 @@ module Wienerlinien
       end
 
       unless response.success?
-        errors = JSON.parse(response.body)
+        # XXX: proper error handling
+        puts JSON.parse(response.body)
       end
 
       response

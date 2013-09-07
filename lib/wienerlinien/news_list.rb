@@ -1,4 +1,5 @@
 module Wienerlinien
+  # NewsList
   class NewsList
     def initialize(connection)
       @connection = connection
@@ -6,10 +7,12 @@ module Wienerlinien
 
     def get(params)
       response = perform_get(params)
-      RecursiveOpenStruct.new(response.body['data'], :recurse_over_arrays => true)
+      RecursiveOpenStruct.new(
+        response.body['data'],
+        recurse_over_arrays: true)
     end
 
-    def perform_get(params={})
+    def perform_get(params = {})
       response = @connection.get do |req|
         req.params = params
         req.url '/ogd_realtime/newsList'
@@ -17,7 +20,8 @@ module Wienerlinien
       end
 
       unless response.success?
-        errors = JSON.parse(response.body)
+        # XXX: proper error handling
+        puts JSON.parse(response.body)
       end
 
       response
