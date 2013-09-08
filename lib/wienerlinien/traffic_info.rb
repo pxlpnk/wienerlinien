@@ -22,12 +22,10 @@ module Wienerlinien
       else
         raise ParamNotGivenError.new('Please provide one or multiple name=')
       end
-
       unless response.success?
         # XXX: proper error handling
         puts JSON.parse(response.body)
       end
-      p response.body
       response
     end
   end # TrafficInfo

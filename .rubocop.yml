@@ -10,4 +10,4 @@ Encoding:
 
 # Avoid methods longer than 30 lines of code
 MethodLength:
-  Max: 10
+  Max: 15
