@@ -1,5 +1,9 @@
 wiener_linien
 =============
+[![Build Status](https://travis-ci.org/pxlpnk/wienerlinien.png?branch=master)](https://travis-ci.org/pxlpnk/wienerlinien)
+[![Dependency Status](https://gemnasium.com/pxlpnk/wienerlinien.png)](https://gemnasium.com/pxlpnk/wienerlinien)
+
+
 
 Wrapper for the Wiener Linien "Echtzeitdaten"
 
