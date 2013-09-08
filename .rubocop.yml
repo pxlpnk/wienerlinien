@@ -4,3 +4,10 @@ AllCops:
     - 'Gemfile.devtools'
   Excludes:
     - 'vendor/**'
+
+Encoding:
+  Enabled: false
+
+# Avoid methods longer than 30 lines of code
+MethodLength:
+  Max: 10
