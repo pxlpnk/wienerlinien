@@ -20,7 +20,7 @@ module Wienerlinien
       end
 
       unless response.success?
-        # XXX: propper error handling
+        # XXX: proper error handling
         puts JSON.parse(response.body)
       end
 
