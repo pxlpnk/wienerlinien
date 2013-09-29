@@ -1,6 +1,6 @@
 require 'recursive-open-struct'
 module Wienerlinien
-  # Monitoris
+  # Monitors
   class Monitors
     def initialize(connection)
       @connection = connection
