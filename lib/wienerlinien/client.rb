@@ -2,7 +2,7 @@ module Wienerlinien
   # Client
   class Client
     def initialize(sender, params = {})
-      @params = params.merge({ sender: sender })
+      @params = params.merge(sender: sender)
       @connection = Faraday.new(url: 'http://www.wienerlinien.at') do |faraday|
         faraday.response :json, content_type: /\bjson$/
         faraday.request :json
